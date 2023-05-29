@@ -1,0 +1,58 @@
+<section class="card shadow mb-5">
+  <div class="card-header">
+    <h2 class="text-uppercase">Formularios (ngModel)</h2>
+    <p>validaciones: pristine, valid, invalid (es viejo)</p>
+  </div>
+  <div class="card-body p-4">
+    <form (ngSubmit)="printData()" #formUser="ngForm">
+      <div class="mb-3">
+        <label for="name">Nombre</label>
+        <input
+          type="text"
+          name="name"
+          class="form-control"
+          name="name"
+          [(ngModel)]="person.name"
+          required
+          #inputName="ngModel"
+        />
+        <p
+          class="text-danger ms-1 mt-1"
+          [hidden]="inputName.valid || inputName.pristine"
+        >
+          * Is required
+        </p>
+      </div>
+
+      <div class="mb-3">
+        <label for="age">Edad</label>
+        <input
+          type="number"
+          id="age"
+          class="form-control"
+          name="age"
+          [(ngModel)]="person.age"
+          required
+          #inputAge="ngModel"
+        />
+        <p
+          class="text-danger ms-1 mt-1"
+          [hidden]="inputAge.valid || inputAge.pristine"
+        >
+          * Is required
+        </p>
+      </div>
+
+      <button type="submit" class="btn btn-primary" *ngIf="formUser.valid">
+        Enviar
+      </button>
+    </form>
+    <br />
+
+    <pre> {{ { inputHTML: "name", errors: inputName.errors } | json }} </pre>
+    <hr />
+    <pre> {{ { inputHTML: "age", errors: inputAge.errors } | json }} </pre>
+    <hr />
+    <pre> {{ { formHTML: "form", "¿isValid?": formUser.valid ? 'sí' : 'no' } | json }} </pre>
+  </div>
+</section>

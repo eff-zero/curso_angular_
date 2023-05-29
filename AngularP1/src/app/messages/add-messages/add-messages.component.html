@@ -1,0 +1,11 @@
+<form (ngSubmit)="addMessage()">
+  <fieldset>
+    <div class="form-floating mb-3">
+      <input type="text" value="" class="form-control" id="message" name="message" placeholder=" " [(ngModel)]="message">
+      <label for="message">Mensaje</label>
+    </div>
+
+    <button class="btn btn-sm btn-primary">Agregar Mensaje</button>
+  </fieldset>
+</form>
+

@@ -1,0 +1,13 @@
+<section class="card shadow mb-5">
+  <div class="card-header">
+    <h2 class="text-uppercase">Imagenes (propiedades dinamicas)</h2>
+  </div>
+  <div class="card-body text-center p-4">
+    <div id="buttons" class="mb-3">
+      <button class="btn btn-primary" (click)="setImgOne()">Imagen 1</button>
+      <button class="btn btn-secondary" (click)="setImgTwo()">Imagen 2</button>
+
+      <img [src]="urlImg" alt="" class="my-3">
+    </div>
+  </div>
+</section>

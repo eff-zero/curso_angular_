@@ -1,0 +1,18 @@
+<div class="card">
+  <div class="card-header">
+    <h2>
+      <code class="text-uppercase"> @Input and @Output: Decorator </code>
+    </h2>
+  </div>
+  <div class="card-body">
+
+    <div class="form-floating">
+      <input id="children" type="text" class="form-control mb-3" placeholder=" " (input)="emitTitleChange()" [(ngModel)]="title">
+      <label for="children">Componente Hijo</label>
+    </div>
+
+    <p> * Texto inyectado por medio de <code>@Input</code> de app-component:
+      <span class="text-secondary"> {{ title }} </span>
+    </p>
+  </div>
+</div>

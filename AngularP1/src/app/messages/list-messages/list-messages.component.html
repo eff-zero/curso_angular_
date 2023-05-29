@@ -1,0 +1,8 @@
+<div *ngIf="messagesService.messages.length" class="my-3">
+  <p> Lista de Mensajes </p>
+  <ol role="list" class="container p-2">
+    <li *ngFor="let message of messagesService.messages;" class="d-flex justify-content-between border rounded p-2 my-2">
+      <span>{{ message.message }}</span> <span class="text-secondary">{{ getActualHour() }}</span>
+    </li>
+  </ol>
+</div>

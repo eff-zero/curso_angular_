@@ -1,0 +1,48 @@
+<section class="card shadow mb-5">
+  <div class="card-header">
+    <h2 class="text-uppercase">Formularios (template)</h2>
+    <p>temas: ngIf, ngFor</p>
+  </div>
+  <div class="card-body p-4">
+    <fieldset>
+      <div class="mb-3">
+        <label for="name">Nombre</label>
+
+        <!-- INPUT CON VARIABLE DE PLANTILLA -->
+        <input
+          type="text"
+          id="name"
+          name="name"
+          class="form-control"
+          #inputName
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="age">Edad</label>
+
+        <!-- INPUT CON VARIABLE DE PLANTILLA -->
+        <input type="text" id="age" name="age" class="form-control" #inputAge />
+      </div>
+      <button
+        class="btn btn-primary"
+        (click)="addPerson({ name: inputName.value, age: +inputAge.value })"
+      >
+        Agregar
+      </button>
+    </fieldset>
+
+    <div class="alert alert-primary my-4" role="alert" *ngIf="showAlert">
+      A simple primary alert—check it out!
+    </div>
+
+   <div class="mt-4">
+    <p>Listado</p>
+    <ul role="list">
+      <li *ngFor="let person of people; let i = index">
+        {{i + 1}} {{ person.name }} - {{ person.age }}
+      </li>
+    </ul>
+   </div> 
+  </div>
+</section>

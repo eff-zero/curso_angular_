@@ -1,0 +1,20 @@
+<main>
+  <header class="bg-primary text-white shadow py-4">
+    <h1 class="text-center fw-bold"> {{ title }} </h1>
+  </header>
+
+  <nav class="navbar bg-body-tertiary shadow-sm mb-5">
+    <ul class="container d-flex justify-content-center align-content-center gap-3" role="list">
+      <li *ngFor="let route of router.config">
+          <a routerLink="{{ route.path }}" routerLinkActive="fw-bold" [hidden]="invalidRoute(route)">{{ route.path }}</a>
+      </li>
+
+      <!--<li><a routerLink="contact" routerLinkActive="fw-bold">Contact</a></li>-->
+      <!--<li><a routerLink="about" routerLinkActive="fw-bold">About</a></li>-->
+    </ul>
+  </nav>
+
+  <section class="container">
+    <router-outlet></router-outlet>
+  </section>
+</main>

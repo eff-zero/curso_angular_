@@ -1,0 +1,42 @@
+<main>
+  <header class="bg-primary text-white shadow py-4 mb-5">
+    <h1 class="text-center fw-bold"> {{ title }} </h1>
+  </header>
+
+
+  <section title="services" class="container border rounded shadow-sm p-2 mb-3">
+    <div class="card">
+      <div class="card-header">
+       <h2> <code class="text-uppercase"> Servicios </code> </h2>
+      </div>
+      <div class="card-body">
+        <app-add-messages></app-add-messages>
+        <app-list-messages></app-list-messages>
+      </div>
+    </div>
+  </section>
+
+
+  <section title="input-output-decorations" class="container border rounded shadow-sm p-2">
+    <div class="form-floating mb-3">
+      <input id="parent" type="text" class="form-control" placeholder=" " [(ngModel)]="title">
+      <label for="parent">Componente Padre</label>
+    </div>
+    <app-children [(title)]="title"></app-children>
+  </section>
+
+  <button class="d-block mx-auto btn btn-secondary my-4" (click)="toggleFormModule()">
+    mostrar modulos inferiores
+  </button>
+
+  <section title="basic-and-forms" class="container" [hidden]="showFormModules">
+    <app-form-with-form-builder></app-form-with-form-builder>
+    <app-form-with-form-group></app-form-with-form-group>
+    <app-form-with-form-control></app-form-with-form-control>
+    <app-ng-model-form></app-ng-model-form>
+    <app-templateform></app-templateform>
+    <app-img></app-img>
+    <app-buttons></app-buttons>
+    <app-counter></app-counter>
+  </section>
+</main>

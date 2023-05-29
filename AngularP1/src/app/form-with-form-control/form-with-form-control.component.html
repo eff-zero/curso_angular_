@@ -1,0 +1,46 @@
+<section class="card shadow mb-5">
+  <div class="card-header">
+    <h2 class="text-uppercase">Formularios (formcontrol)</h2>
+    <p>formcontrol: validators</p>
+  </div>
+  <div class="card-body p-4">
+    <form>
+      <div class="mb-3">
+        <label for="name">Nombre</label>
+        <input
+          type="text"
+          name="name"
+          class="form-control"
+          name="name"
+          [formControl]="name"
+          required
+        />
+        <p class="text-danger ms-1 mt-1" [hidden]="name.pristine || name.valid">* Is required</p>
+      </div>
+
+      <div class="mb-3">
+        <label for="age">Email</label>
+        <input
+          type="text"
+          id="email"
+          class="form-control"
+          name="email"
+          [formControl]="email"
+          required
+        />
+
+        <div [hidden]="email.valid || email.pristine">
+          <p class="text-danger ms-1 mt-1" *ngIf="email.errors?.['required']">* Is required</p>
+          <p class="text-danger ms-1 mt-1" *ngIf="email.errors?.['email']">* Should be a email</p>
+        </div>
+        
+      </div>
+
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </form> <br>
+
+    <pre>{{ {input: 'name[HTML]' ,errors: name.errors}| json }}</pre> <hr>
+    <pre>{{ {input: 'email[HTML]', errors: email.errors}| json }}</pre> <hr>
+    
+  </div>
+</section>
