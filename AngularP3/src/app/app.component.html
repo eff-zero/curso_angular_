@@ -2,7 +2,17 @@
   <header class="bg-primary text-white py-4">
     <h1 class="text-center fw-bold"> {{ title }} </h1>
   </header>
+
+  <nav class="bg-light shadow-sm mb-3">
+    <app-navigation></app-navigation>
+  </nav>
+
+  <section class="container">
+    <router-outlet></router-outlet>
+  </section>
+
+  <footer>
+    <app-footer></app-footer>
+  </footer>
 </main>
 
-<app-navigation></app-navigation>
-<router-outlet></router-outlet>
